@@ -24,7 +24,7 @@ TEST(Test1, ArrayNotChangedIfSorted) {
 
     delete[] originalArrCopy;  // Zwolnienie pamiêci
 }
-
+/
 // Test 2: SprawdŸ, czy tablica jest poprawnie posortowana po wywo³aniu sort()
 TEST(MergeSortTest, ArraySortedCorrectly) {
     MergeSort sorter;
