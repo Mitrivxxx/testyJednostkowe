@@ -1,0 +1,6 @@
+packages.config
+pch.cpp
+pch.h
+testyJednostkowePierwszy.vcxproj
+testyJednostkowePierwszy.vcxproj.user
+x64/
