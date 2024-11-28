@@ -1,0 +1,10 @@
+PropertySheet.props
+packages.config
+pch.cpp
+pch.h
+readme.txt
+testyJednostkowe.vcxproj
+testyJednostkowe.vcxproj.filters
+testyJednostkowe.vcxproj.user
+testyJednostkowe_TemporaryKey.pfx
+x64/
