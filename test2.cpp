@@ -32,7 +32,6 @@ TEST(czy_poprawnie_sortuje_z_liczbami_ujemnymi, ArraySortedCorrectly) {
     int orginalArray[] = { -5,-4,-3,-2,-1 };
     int size = sizeof(arr) / sizeof(arr[0]);
     sorter.sort(arr, size);
-    sorter.showArray(arr, size);
     for (int i = 0; i < size; ++i) {
         EXPECT_EQ(arr[i], orginalArray[i]);
     }
@@ -42,6 +41,18 @@ TEST(czy_poprawnie_sortuje_z_liczbami_ujemnymi_i_dodatnimi, ArraySortedCorrectly
     MergeSort sorter;
     int arr[] = { -1, 3, 2, -5, -4 };
     int orginalArray[] = { -5,-4,-1, 2, 3 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    sorter.sort(arr, size);
+
+    for (int i = 0; i < size; ++i) {
+        EXPECT_EQ(arr[i], orginalArray[i]);
+    }
+}
+//obs³uguje pust¹ tablicê bez rzucania wyj¹tkiem,
+TEST(czy_pusta_tablica, ArraySortedCorrectly) {
+    MergeSort sorter;
+    int arr[4];
+    int orginalArray[4];
     int size = sizeof(arr) / sizeof(arr[0]);
     sorter.sort(arr, size);
 
