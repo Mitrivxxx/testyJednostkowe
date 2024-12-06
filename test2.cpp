@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "MergeSort.h"
+#include <cstdlib>
+#include <ctime> 
 //Potrafi posortowaæ tablicê, która jest posortowana w odwrotnej kolejnoœci
 
 TEST(czy_poprawana_w_poprawnej_kolejnosci, ArraySortedCorrectly) {
@@ -77,6 +79,45 @@ TEST(MergeSortTest, dodatnie_ujemne_duplikanty) {
     MergeSort sorter;
     int arr[] = { -3, -1, -3, -2, -1, -2 };
     int size = sizeof(arr) / sizeof(arr[0]);
+
+    sorter.sort(arr, size);
+
+    EXPECT_TRUE(std::is_sorted(arr, arr + size));
+}
+//dwa elementy rosnace
+TEST(MergeSortTest, dwa_rosnace) {
+    MergeSort sorter;
+    int arr[] = { 3, 2 };
+    int orginalArray[] = { 2, 3 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    sorter.sort(arr, size);
+
+    for (int i = 0; i < size; ++i) {
+        EXPECT_EQ(arr[i], orginalArray[i]);
+    }
+}
+//tablica z ponad 100 ele
+TEST(MergeSortTests, duzat_ablica) {
+    MergeSort sorter;
+    const int size = 121;
+    int arr[size];
+
+    for (int i = 0; i < size; ++i) {
+        arr[i] = std::rand() % 100;
+    }
+
+    sorter.sort(arr, size);
+
+    EXPECT_TRUE(std::is_sorted(arr, arr + size));
+}
+TEST(MergeSortTests, duzat_ablica_z_ujemnymi) {
+    MergeSort sorter;
+    const int size = 121;
+    int arr[size];
+
+    for (int i = 0; i < size; ++i) {
+        arr[i] = std::rand() % 201 - 100;
+    }
 
     sorter.sort(arr, size);
 
