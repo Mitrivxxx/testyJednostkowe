@@ -60,3 +60,27 @@ TEST(czy_pusta_tablica, ArraySortedCorrectly) {
         EXPECT_EQ(arr[i], orginalArray[i]);
     }
 }
+//tblica jednoelementowa pozostaje niezmieniona
+TEST(MergeSortTest, tab_jeden_ele) {
+    MergeSort sorter;
+    int arr[] = {3};
+    int orginalArray[] = { 3 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    sorter.sort(arr, size);
+
+    for (int i = 0; i < size; ++i) {
+        EXPECT_EQ(arr[i], orginalArray[i]);
+    }
+}
+//tblica  z duplikantami
+TEST(MergeSortTest, tduplikanty) {
+    MergeSort sorter;
+    int arr[] = { 3, 6, 3 };
+    int orginalArray[] = { 3, 3, 6 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+    sorter.sort(arr, size);
+
+    for (int i = 0; i < size; ++i) {
+        EXPECT_EQ(arr[i], orginalArray[i]);
+    }
+}
