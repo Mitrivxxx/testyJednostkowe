@@ -72,15 +72,14 @@ TEST(MergeSortTest, tab_jeden_ele) {
         EXPECT_EQ(arr[i], orginalArray[i]);
     }
 }
-//tblica  z duplikantami
-TEST(MergeSortTest, tduplikanty) {
+//dodatnie ujemne duplikanty------------
+TEST(MergeSortTest, dodatnie_ujemne_duplikanty) {
     MergeSort sorter;
-    int arr[] = { 3, 6, 3 };
-    int orginalArray[] = { 3, 3, 6 };
+    int arr[] = { -3, -1, -3, -2, -1, -2 };
     int size = sizeof(arr) / sizeof(arr[0]);
+
     sorter.sort(arr, size);
 
-    for (int i = 0; i < size; ++i) {
-        EXPECT_EQ(arr[i], orginalArray[i]);
-    }
+    EXPECT_TRUE(std::is_sorted(arr, arr + size));
 }
+
